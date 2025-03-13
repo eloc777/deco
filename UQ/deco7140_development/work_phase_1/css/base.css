@@ -1,15 +1,21 @@
+
 body {
     font-family: "Rock Salt", cursive;
     font-weight: 400;
     font-style: normal;
 }
 
-h1, h2, h3, h4, h5, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
     line-height: 1.5;
 }
 h1 {
     font-size: 4rem;
-    color: #999AC6;
+    color: #999ac6;
 }
 
 h2 {
