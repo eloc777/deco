@@ -1,0 +1,167 @@
+/* CSS Reset - A comprehensive reset including animations */
+
+/* Box sizing for all elements */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/* Document root and body reset */
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography reset */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul,
+li,
+pre,
+code,
+address,
+variable,
+form,
+fieldset,
+blockquote,
+dl,
+dt,
+dd {
+    font-weight: normal;
+    font-style: normal;
+    font-size: 100%;
+    font-family: inherit;
+}
+
+/* List reset */
+ol,
+ul {
+    list-style: none;
+}
+
+/* Form element reset */
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+    appearance: none;
+    background: transparent;
+}
+
+/* Button reset */
+button {
+    cursor: pointer;
+    background-color: transparent;
+    -webkit-appearance: button;
+    appearance: button;
+}
+
+/* Link reset */
+a {
+    color: inherit;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+/* Table reset */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Images and media reset */
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Remove default horizontal scrollbar in IE 10+ */
+textarea {
+    overflow: auto;
+}
+
+/* Animation and transition reset */
+* {
+    animation: none;
+    animation-delay: 0;
+    animation-direction: normal;
+    animation-duration: 0;
+    animation-fill-mode: none;
+    animation-iteration-count: 1;
+    animation-name: none;
+    animation-play-state: running;
+    animation-timing-function: ease;
+
+    transition: none;
+    transition-delay: 0;
+    transition-duration: 0;
+    transition-property: none;
+    transition-timing-function: ease;
+
+    transform: none;
+    transform-style: flat;
+    perspective: none;
+
+    backface-visibility: visible;
+}
+
+/* Accessibility improvements */
+[hidden] {
+    display: none !important;
+}
+
+/* Remove outline for non-keyboard focus */
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Keep outline for keyboard navigation */
+:focus-visible {
+    outline: 2px solid #4d90fe;
+}
+
+/* Remove default fieldset styles */
+fieldset {
+    min-width: 0;
+    border: 0;
+}
+
+/* Reset for print */
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+}
