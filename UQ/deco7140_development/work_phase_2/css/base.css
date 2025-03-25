@@ -1,0 +1,31 @@
+.rock-salt-regular {
+    font-family: "Rock Salt", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    color: var(--text-color); /* color applies to text */
+    background-color: var(--background-color);
+}
+/* Typography (Using Golden Ratio) */
+h1 {
+    font-size: 4.2rem; /* 2.6 x 1.618 rounded */
+    color: var(--primary-color);
+}
+                                    
+/* Typography (Using Golden Ratio) */
+h2 {
+    font-size: 2.6rem;
+    color: var(--text-color);
+    font-weight: 700;
+}
+                                    
+/* Typography (Using Golden Ratio) */
+h3 {
+    font-size: 1.6rem; 
+    color: var(--text-color);
+    font-weight: 700;
+}
+                                    
