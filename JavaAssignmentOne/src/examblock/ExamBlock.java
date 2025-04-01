@@ -149,9 +149,9 @@ public class ExamBlock {
     }
 
     private void countStudents(boolean aara) {
-        System.out.println("What subject do you want to count the " + aaraString(aara) + "students for? ");
+        System.out.println("What subject do you want to count the" + aaraString(aara) + "students for? ");
         Subject subject = cli.pickOptionFromCollection(subjectCatalogue.all());
-        System.out.println("There are " + cohort.countStudents(subject, aara) + " " + aaraString(aara) +
+        System.out.println("There are " + cohort.countStudents(subject, aara) + aaraString(aara) +
                 "students who will be taking the " + subject.getTitle() + " exam.");
     }
 
@@ -161,7 +161,7 @@ public class ExamBlock {
 
     private void scheduleExam(boolean aara) {
         // Select the exam to schedule.
-        System.out.println("What " + aaraString(aara) + "exam do you want to schedule? ");
+        System.out.println("What" + aaraString(aara) + "exam do you want to schedule? ");
         Exam exam = cli.pickOptionFromCollection(exams.all());
         int numberStudents = cohort.countStudents(exam.getSubject(), aara);
         System.out.println("There are " + numberStudents + aaraString(aara) +
@@ -184,7 +184,7 @@ public class ExamBlock {
             totalStudents = sessions.getSessionNewTotal(venue, exam, numberStudents);
         } while (sessionOverflow(numberSeats, totalStudents));
         // Confirm scheduling
-        System.out.println("CONFIRM scheduling the " + exam.getSubject().getTitle() + " " +
+        System.out.println("CONFIRM scheduling the " + exam.getSubject().getTitle() +
                 aaraString(aara) + "exam into " + venue.venueId());
         String pickedOption;
         ArrayList<String> options = new ArrayList<>();
@@ -198,7 +198,7 @@ public class ExamBlock {
 
     private String aaraString(boolean aara) {
         if (aara) {
-            return "AARA ";
+            return " AARA ";
         } else {
             return " ";
         }

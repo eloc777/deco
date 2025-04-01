@@ -8,7 +8,7 @@ public class Room {
      * Constructs a Room.
      * @param id
      */
-    Room(String id) {
+    public Room(String id) {
 
         this.id = id;
     }
