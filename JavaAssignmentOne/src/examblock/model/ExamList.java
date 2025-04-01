@@ -7,7 +7,10 @@ import java.util.List;
  * A collection object for holding and managing a list of Exams.
  */
 public class ExamList {
-    protected List<Exam> exams;
+    /**
+     * List of Exams.
+     */
+    private List<Exam> exams;
 
     /**
      * Constructs an empty list of Exams.
@@ -23,7 +26,8 @@ public class ExamList {
      * @throws IllegalArgumentException if the exam is null.
      */
     public void add(Exam exam) {
-        if (exam == null) {
+        if (exam
+                == null) {
             throw new IllegalArgumentException("Exam cannot be null.");
         }
         exams.add(exam);
@@ -36,7 +40,8 @@ public class ExamList {
      * @throws IllegalArgumentException if the exam is null or not found in the list.
      */
     public void removeExam(Exam exam) {
-        if (exam == null) {
+        if (exam
+                == null) {
             throw new IllegalArgumentException("Exam cannot be null.");
         }
         if (!exams.remove(exam)) {
@@ -51,17 +56,18 @@ public class ExamList {
      * @return The first Exam with a matching Subject title, if it exists.
      * @throws IllegalStateException if no matching exam is found.
      */
-    public Exam bySubjectTitle(String title) {
+    public Exam bySubjectTitle(String title) throws IllegalStateException {
         for (Exam exam : exams) {
             if (exam.getSubject().toString().equalsIgnoreCase(title)) {
                 return exam;
             }
         }
-        throw new IllegalStateException("No Exam found with the given Subject title: " + title);
+        throw new IllegalStateException();
     }
 
     /**
-     * Creates a new List holding references to all the Exams managed by this ExamList and returns it.
+     * Creates a new List holding references to all the Exams managed by this ExamList and
+     * returns it.
      *
      * @return A new List holding references to all the Exams managed by this ExamList.
      */

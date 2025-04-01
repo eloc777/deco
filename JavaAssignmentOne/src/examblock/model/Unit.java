@@ -5,18 +5,35 @@ package examblock.model;
  * These are typically Unit 3 or Unit 4 for the Year 12 units, but may be different.
  */
 public class Unit {
-    protected final Subject subject;
-    protected final Character unitId;
-    protected final String title;
-    protected final String description;
+    /**
+     * subject the unit belongs to
+     */
+    private final Subject subject;
+    /**
+     * unit identifier
+     */
+    private final Character unitId;
+    /**
+     * unit title
+     */
+    private final String title;
+    /**
+     * unit description
+     */
+    private final String description;
 
     /**
      * Constructs a new `Subject` `Unit` object.
      *
-     * @param subject the parent subject of this unit.
-     * @param unitId the single character unit identifier of this unit.
-     * @param title the string title of this unit, consisting of one or more capitalised words separated by one or more spaces or other punctuation.
-     * @param description the string description of this unit, in whole sentences, each beginning with a capital and finishing with a full stop, with words separated by one or more spaces or other punctuation.
+     * @param subject     the parent subject of this unit.
+     * @param unitId      the single character unit identifier of this unit.
+     * @param title       the string title of this unit, consisting of one or more capitalised
+     *                    words separated by one or
+     *                    more spaces or other punctuation.
+     * @param description the string description of this unit, in whole sentences, each beginning
+     *                    with a capital and
+     *                    finishing with a full stop, with words separated by one or more spaces
+     *                    or other punctuation.
      */
     public Unit(Subject subject, Character unitId, String title, String description) {
         this.subject = subject;
@@ -58,9 +75,17 @@ public class Unit {
      * @return a detailed string representation of this unit.
      */
     public String getFullDetail() {
-        return "UNIT " + unitId + ": " + title.toUpperCase() + "\n" +
-                "Subject: " + subject.getTitle() + "\n" +
-                "\"" + description + "\"";
+        return "UNIT "
+                + unitId
+                + ": "
+                + title.toUpperCase()
+                + "\n"
+                + "Subject: "
+                + subject.getTitle()
+                + "\n"
+                + "\""
+                + description
+                + "\"";
     }
 
     /**
@@ -70,6 +95,9 @@ public class Unit {
      */
     @Override
     public String toString() {
-        return "Unit " + unitId + ": " + title;
+        return "Unit "
+                + unitId
+                + ": "
+                + title;
     }
 }

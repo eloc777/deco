@@ -7,7 +7,9 @@ import java.util.List;
  * A collection class for managing a list of Students.
  */
 public class StudentList {
-
+    /**
+     * List of students
+     */
     private List<Student> students;
 
     /**
@@ -27,7 +29,8 @@ public class StudentList {
     }
 
     /**
-     * Creates a new List holding references to all the Students managed by this StudentList and returns it.
+     * Creates a new List holding references to all the Students managed by this StudentList and
+     * returns it.
      *
      * @return a new List holding references to all the Students managed by this StudentList.
      */
@@ -48,7 +51,8 @@ public class StudentList {
                 return student;
             }
         }
-        throw new IllegalStateException("No student found with LUI: " + lui);
+        throw new IllegalStateException("No student found with LUI: "
+                + lui);
     }
 
     /**
@@ -61,7 +65,9 @@ public class StudentList {
     public int countStudents(Subject subject, boolean aara) {
         int count = 0;
         for (Student student : students) {
-            if (student.getSubjects().contains(subject) && student.isAara() == aara) {
+            if (student.getSubjects().all().contains(subject)
+                    && student.isAara()
+                    == aara) {
                 count++;
             }
         }

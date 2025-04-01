@@ -9,6 +9,9 @@ import java.util.List;
  * A collection object for holding and managing Exam Sessions.
  */
 public class SessionList {
+    /**
+     * List of sessions
+     */
     private List<Session> sessions;
 
     /**
@@ -25,7 +28,8 @@ public class SessionList {
      * @throws IllegalArgumentException if the session is null.
      */
     public void add(Session session) {
-        if (session == null) {
+        if (session
+                == null) {
             throw new IllegalArgumentException("Session cannot be null.");
         }
         sessions.add(session);
@@ -38,7 +42,8 @@ public class SessionList {
      * @throws IllegalArgumentException if the session is null or not found in the list.
      */
     public void remove(Session session) {
-        if (session == null) {
+        if (session
+                == null) {
             throw new IllegalArgumentException("Session cannot be null.");
         }
         if (!sessions.remove(session)) {
@@ -51,22 +56,23 @@ public class SessionList {
      *
      * @return A new list holding references to all the Sessions in this SessionList.
      */
-    public SessionList all() {
-        SessionList result = new SessionList();
+    public List<Session> all() {
+        List<Session> returnable = new ArrayList<>();
         for (Session session : sessions) {
-            result.add(session);
+            returnable.add(session);
         }
-        return result;
+        return returnable;
     }
 
     /**
-     * Creates a new list holding references to those Sessions for a given Venue in this SessionList.
+     * Creates a new list holding references to those Sessions for a given Venue in this
+     * SessionList.
      *
      * @param venue The exam venue for the list of sessions.
      * @return A new list holding references to all the sessions in this venue.
      */
-    public SessionList forVenue(Venue venue) {
-        SessionList venueSessions = new SessionList();
+    public List<Session> forVenue(Venue venue) {
+        List<Session> venueSessions = new ArrayList<>();
         for (Session session : sessions) {
             if (session.getVenue().equals(venue)) {
                 venueSessions.add(session);
@@ -81,11 +87,15 @@ public class SessionList {
      * @param venue The venue object for the session we are looking for.
      * @param day   The session date.
      * @param start The start time of the exam session.
-     * @return The sessionNumber of a session at a particular time in a given Venue, else zero if no session exists at that time.
+     * @return The sessionNumber of a session at a particular time in a given Venue, else zero if
+     * no session exists
+     * at that time.
      */
     public int getSessionNumber(Venue venue, LocalDate day, LocalTime start) {
         for (Session session : sessions) {
-            if (session.getVenue().equals(venue) && session.getDate().equals(day) && session.getTime().equals(start)) {
+            if (session.getVenue().equals(venue)
+                    && session.getDate().equals(day)
+                    && session.getTime().equals(start)) {
                 return session.getSessionNumber();
             }
         }
@@ -100,13 +110,15 @@ public class SessionList {
      * @return The first Session with a matching Venue and sessionNumber, if it exists.
      * @throws IllegalStateException If no such session exists in this list.
      */
-    public Session getSession(Venue venue, int sessionNumber) {
+    public Session getSession(Venue venue, int sessionNumber) throws IllegalStateException {
         for (Session session : sessions) {
-            if (session.getVenue().equals(venue) && session.getSessionNumber() == sessionNumber) {
+            if (session.getVenue().equals(venue)
+                    && session.getSessionNumber()
+                    == sessionNumber) {
                 return session;
             }
         }
-        throw new IllegalStateException("No matching Session found with Venue: " + venue + " and Session Number: " + sessionNumber);
+        throw new IllegalStateException();
     }
 
     /**
@@ -117,27 +129,31 @@ public class SessionList {
      * @return The first Session with a matching Venue and Exam, if it exists.
      * @throws IllegalStateException If no such session exists in this list.
      */
-    public Session getSession(Venue venue, Exam exam) {
+    public Session getSession(Venue venue, Exam exam) throws IllegalStateException {
         for (Session session : sessions) {
             if (session.getVenue().equals(venue)) {
-                for (Exam e : session.getExams().exams) {
+                for (Exam e : session.getExams()) {
                     //FIXME check this later, not sure if will work
-                    if (exam.equals(e))
+                    if (exam.equals(e)) {
                         return session;
+                    }
                 }
                 return session;
             }
         }
-        throw new IllegalStateException("No matching Session found with Venue: " + venue + " and Exam: " + exam);
+        throw new IllegalStateException();
     }
 
     /**
-     * Finds or creates a suitable session and calculates the total number of students in that session after adding `numberStudents`.
+     * Finds or creates a suitable session and calculates the total number of students in that
+     * session after adding
+     * `numberStudents`.
      *
-     * @param venue         The exam venue for the session.
-     * @param exam          The exam to be allocated to this session in this venue.
+     * @param venue          The exam venue for the session.
+     * @param exam           The exam to be allocated to this session in this venue.
      * @param numberStudents The number of students to be allocated to this session.
-     * @return The total number of students that will be in the session after adding `numberStudents`.
+     * @return The total number of students that will be in the session after adding
+     * `numberStudents`.
      */
     public int getSessionNewTotal(Venue venue, Exam exam, int numberStudents) {
         // Find or create a suitable session
@@ -150,38 +166,54 @@ public class SessionList {
         }
 
         // If no existing session is found, create one
-        if (targetSession == null) {
+        if (targetSession
+                == null) {
             System.out.println("There is currently no exam session in that venue at that time.");
             System.out.println("Creating a new session...");
             int nextUniqueSessionNumber = getNextUniqueSessionNumber(venue);
-            targetSession = new Session(venue, nextUniqueSessionNumber, LocalDate.now(), LocalTime.now());
+            targetSession = new Session(venue, nextUniqueSessionNumber, LocalDate.now(),
+                    LocalTime.now());
             add(targetSession);
         }
 
         // Calculate total number of students
         int existingStudentCount = targetSession.countStudents();
-        int totalStudents = existingStudentCount + numberStudents;
+        int totalStudents = existingStudentCount
+                + numberStudents;
 
         // Print details
-        if (existingStudentCount > 0) {
-            System.out.println("There are already " + existingStudentCount + " students who will be taking an exam in that venue.");
-            System.out.println("Adding " + numberStudents + " students for this exam.");
+        if (existingStudentCount
+                > 0) {
+            System.out.println("There are already "
+                    + existingStudentCount
+                    + " students who will "
+                    + "be taking an exam"
+                    + " in that venue.");
+            System.out.println("Adding "
+                    + numberStudents
+                    + " students for this exam.");
         }
-        System.out.println("That's a total of " + totalStudents + " students.");
+        System.out.println("That's a total of "
+                + totalStudents
+                + " students.");
 
         return totalStudents;
     }
 
     /**
-     * Allocates an exam to an existing or newly created session in a given Venue and prints confirmation details.
+     * Allocates an exam to an existing or newly created session in a given Venue and prints
+     * confirmation details.
      *
-     * @param venue         The exam venue for the new/existing session.
-     * @param exam          The exam to be allocated to this venue/session.
+     * @param venue          The exam venue for the new/existing session.
+     * @param exam           The exam to be allocated to this venue/session.
      * @param numberStudents The number of students being added with this allocation.
      */
     public void scheduleExam(Venue venue, Exam exam, int numberStudents) {
         int totalStudents = getSessionNewTotal(venue, exam, numberStudents);
-        System.out.println(exam.getSubject() + " exam added to " + venue.venueId() + ".");
+        System.out.println(exam.getSubject()
+                + " exam added to "
+                + venue.venueId()
+                + ".");
     }
 
     /**
@@ -197,6 +229,7 @@ public class SessionList {
                 maxCurrentNumber = Math.max(maxCurrentNumber, s.getSessionNumber());
             }
         }
-        return maxCurrentNumber + 1; // Next unique number
+        return maxCurrentNumber
+                + 1; // Next unique number
     }
 }

@@ -1,11 +1,14 @@
 package examblock.model;
 
 public class Room {
-
-    protected final String id; // The room identifier
+    /**
+     * The room identifier
+     */
+    private final String id;
 
     /**
      * Constructs a Room.
+     *
      * @param id
      */
     public Room(String id) {
@@ -15,6 +18,7 @@ public class Room {
 
     /**
      * Gets the identifier of the room
+     *
      * @return identifier of the room
      */
     public String roomId() {
@@ -22,7 +26,6 @@ public class Room {
     }
 
     /**
-     *
      * @return A string representation of the room
      */
     @Override

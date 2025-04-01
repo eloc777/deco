@@ -7,6 +7,9 @@ import java.util.List;
  * A collection object for holding and managing `Room`s.
  */
 public class RoomList {
+    /**
+     * A list of rooms.
+     */
     private List<Room> rooms;
 
     /**
@@ -39,8 +42,10 @@ public class RoomList {
      *
      * @param id - the `id` of the `Room` to be found.
      * @return The first `Room` with a matching `id`, if it exists.
-     * @throws IllegalStateException - throw an IllegalStateException if it can't find a matching room
-     *         as that indicates there is a misalignment of the executing state and the complete list of possible rooms.
+     * @throws IllegalStateException - throw an IllegalStateException if it can't find a matching
+     *                               room
+     *                               as that indicates there is a misalignment of the executing
+     *                               state and the complete list of possible rooms.
      */
     public Room getRoom(String id) throws IllegalStateException {
         for (Room room : rooms) {
@@ -48,11 +53,14 @@ public class RoomList {
                 return room;
             }
         }
-        throw new IllegalStateException("Room with ID '" + id + "' not found");
+        throw new IllegalStateException("Room with ID '"
+                + id
+                + "' not found");
     }
 
     /**
-     * Creates a new `List` holding `references` to all the `Room`s managed by this `RoomList` and returns it.
+     * Creates a new `List` holding `references` to all the `Room`s managed by this `RoomList`
+     * and returns it.
      *
      * @return A new `List` holding `references` to all the `Room`s managed by this `RoomList`.
      */
@@ -66,11 +74,16 @@ public class RoomList {
      * @return Detailed string representations of the contents of this room list.
      */
     public String getFullDetail() {
-        StringBuilder result = new StringBuilder("Room List - " + rooms.size() + " room(s)\n");
+        StringBuilder result = new StringBuilder("Room List - "
+                + rooms.size()
+                + " room(s)\n");
 
-        for (int i = 0; i < rooms.size(); i++) {
+        for (int i = 0; i
+                < rooms.size(); i++) {
             result.append(rooms.get(i).toString());
-            if (i < rooms.size() - 1) {
+            if (i
+                    < rooms.size()
+                    - 1) {
                 result.append("\n");
             }
         }
@@ -85,11 +98,16 @@ public class RoomList {
      */
     @Override
     public String toString() {
-        StringBuilder result = new StringBuilder("Room List - " + rooms.size() + " room(s)\n");
+        StringBuilder result = new StringBuilder("Room List - "
+                + rooms.size()
+                + " room(s)\n");
 
-        for (int i = 0; i < rooms.size(); i++) {
+        for (int i = 0; i
+                < rooms.size(); i++) {
             result.append(rooms.get(i).toString());
-            if (i < rooms.size() - 1) {
+            if (i
+                    < rooms.size()
+                    - 1) {
                 result.append("\n");
             }
         }

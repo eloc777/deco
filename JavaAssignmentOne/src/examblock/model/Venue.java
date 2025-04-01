@@ -5,26 +5,45 @@ package examblock.model;
  * The Venue class extends the Room class and manages multiple rooms within the venue.
  */
 public class Venue extends Room {
+    /**
+     * number of rooms
+     */
+    private int roomCount;
+    /**
+     * list of rooms making up the venue
+     */
+    private RoomList rooms;
+    /**
+     * number of rows
+     */
+    private int rows;
+    /**
+     * number of columns
+     */
+    private int columns;
+    /**
+     * number of desks
+     */
+    private int totalDesks;
+    /**
+     * whether the venue is used for AARA exam sessions.
+     */
+    private boolean aara;
 
-    protected int roomCount;
-    protected RoomList rooms;
-    protected int rows;
-    protected int columns;
-    protected int totalDesks;
-    protected boolean aara;
 
     /**
      * Constructs a new Venue object, consisting of one or more Rooms.
      *
-     * @param id        the identifier of the venue (e.g., "E101" or "L1+L2").
-     * @param roomCount the number of rooms used in the venue; must be one of 1, 2, or 3.
-     * @param rooms     the list of Room objects that make up this venue (at least one room).
-     * @param rows      the number of rows of desks in the venue, counted front to back.
-     * @param columns   the number of columns of desks in the venue, counted left to right.
+     * @param id         the identifier of the venue (e.g., "E101" or "L1+L2").
+     * @param roomCount  the number of rooms used in the venue; must be one of 1, 2, or 3.
+     * @param rooms      the list of Room objects that make up this venue (at least one room).
+     * @param rows       the number of rows of desks in the venue, counted front to back.
+     * @param columns    the number of columns of desks in the venue, counted left to right.
      * @param totalDesks the total number of desks in the venue (may be less than rows * columns).
-     * @param aara      whether the venue is used for AARA exam sessions.
+     * @param aara       whether the venue is used for AARA exam sessions.
      */
-    public Venue(String id, int roomCount, RoomList rooms, int rows, int columns, int totalDesks, boolean aara) {
+    public Venue(String id, int roomCount, RoomList rooms, int rows, int columns, int totalDesks,
+                 boolean aara) {
         super(id);
         this.roomCount = roomCount;
         this.rooms = rooms;
@@ -40,6 +59,8 @@ public class Venue extends Room {
      * @return the identifier of the venue.
      */
     public String venueId() {
+        //FIXME loop through rooms
+        String id = new String();
         return id;
     }
 
@@ -95,7 +116,8 @@ public class Venue extends Room {
      * @return true if this venue is the same AARA type as the parameter.
      */
     public boolean checkVenueType(boolean aara) {
-        if (this.aara == aara) {
+        if (this.aara
+                == aara) {
             System.out.println(this.aara ? "This is an AARA venue." : "This is NOT an AARA venue.");
             return true;
         } else {
@@ -111,10 +133,15 @@ public class Venue extends Room {
      * @return true if the students will fit in the venue, false otherwise.
      */
     public boolean willFit(int numberStudents) {
-        if (numberStudents <= totalDesks) {
+        if (numberStudents
+                <= totalDesks) {
             return true;
         } else {
-            System.out.println("This venue only has " + totalDesks + " desks, " + numberStudents + " students will not fit in this venue!");
+            System.out.println("This venue only has "
+                    + totalDesks
+                    + " desks, "
+                    + numberStudents
+                    + " students will not fit in this venue!");
             return false;
         }
     }
@@ -126,7 +153,8 @@ public class Venue extends Room {
      */
     @Override
     public String toString() {
-        return "Venue ID: " + venueId();
+        return "Venue ID: "
+                + venueId();
     }
 }
 

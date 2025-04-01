@@ -2,6 +2,8 @@ package examblock.model;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Represents a single Exam Session in a specific venue.
@@ -9,12 +11,30 @@ import java.time.LocalTime;
  * Sessions have unique numbers within each venue but not across venues.
  */
 public class Session {
-    protected final Venue venue;
-    protected final int sessionNumber;
-    protected final LocalDate day;
-    protected final LocalTime startTime;
-    protected ExamList exams;
-    protected int studentCount;
+    /**
+     * Session venue.
+     */
+    private final Venue venue;
+    /**
+     * Session number
+     */
+    private final int sessionNumber;
+    /**
+     * Session date
+     */
+    private final LocalDate day;
+    /**
+     * Starting time of the session
+     */
+    private final LocalTime startTime;
+    /**
+     * List of exams in the session
+     */
+    private ExamList exams;
+    /**
+     * total number of students in the session.
+     */
+    private int studentCount;
 
     /**
      * Constructs a new empty Exam Session for a particular Venue.
@@ -27,7 +47,8 @@ public class Session {
      * @throws IllegalArgumentException if the venue is null.
      */
     public Session(Venue venue, int sessionNumber, LocalDate day, LocalTime start) {
-        if (venue == null) {
+        if (venue
+                == null) {
             throw new IllegalArgumentException("Venue cannot be null.");
         }
         this.venue = venue;
@@ -79,8 +100,8 @@ public class Session {
      *
      * @return A list of exams being held in this session.
      */
-    public ExamList getExams() {
-        return exams;
+    public List<Exam> getExams() {
+        return exams.all();
     }
 
     /**
@@ -100,10 +121,12 @@ public class Session {
      * @throws IllegalArgumentException if the exam is null or if numberStudents is negative.
      */
     public void scheduleExam(Exam exam, int numberStudents) {
-        if (exam == null) {
+        if (exam
+                == null) {
             throw new IllegalArgumentException("Exam cannot be null.");
         }
-        if (numberStudents < 0) {
+        if (numberStudents
+                < 0) {
             throw new IllegalArgumentException("Number of students cannot be negative.");
         }
         exams.add(exam);
@@ -118,7 +141,10 @@ public class Session {
      * @throws IllegalArgumentException if exams or cohort is null.
      */
     public void allocateStudents(ExamList exams, StudentList cohort) {
-        if (exams == null || cohort == null) {
+        if (exams
+                == null
+                || cohort
+                == null) {
             throw new IllegalArgumentException("Exams and cohort cannot be null.");
         }
         // Implementation depends on ExamList and StudentList classes
@@ -132,25 +158,37 @@ public class Session {
     public void printDesks() {
         System.out.println("Printing desk layout...");
         // Placeholder logic:
-        for (int i = 0; i < studentCount; i++) {
-            System.out.println("Desk " + (i + 1) + ": Student info here");
+        for (int i = 0; i
+                < studentCount; i++) {
+            System.out.println("Desk "
+                    + (i
+                    + 1)
+                    + ": Student info here");
         }
     }
 
     /**
-     * Returns a string representation of the state of this session, including its attributes and exams scheduled within it.
+     * Returns a string representation of the state of this session, including its attributes and
+     * exams scheduled within
+     * it.
      *
      * @return A string representation of the state of this session.
      */
     @Override
     public String toString() {
-        return "Session{" +
-                "venue=" + venue +
-                ", sessionNumber=" + sessionNumber +
-                ", day=" + day +
-                ", startTime=" + startTime +
-                ", exams=" + exams +
-                ", studentCount=" + studentCount +
-                '}';
+        return "Session{"
+                + "venue="
+                + venue
+                + ", sessionNumber="
+                + sessionNumber
+                + ", day="
+                + day
+                + ", startTime="
+                + startTime
+                + ", exams="
+                + exams
+                + ", studentCount="
+                + studentCount
+                + '}';
     }
 }

@@ -8,55 +8,83 @@ import java.util.List;
  * Class representing a Year 12 student.
  */
 public class Student {
-    protected Long lui;
-    protected String givenNames;
-    protected String familyName;
-    protected LocalDate dob;
-    protected String house;
-    protected Boolean aara;
-    protected List<Subject> subjects;
+    /**
+     * the student's 10-digit Learner Unique Identifier (LUI)
+     */
+    private Long lui;
+    /**
+     * the given names for the student
+     */
+    private String givenNames;
+    /**
+     * the family name for the student
+     */
+    private String familyName;
+    /**
+     * the date of birth
+     */
+    private LocalDate dob;
+    /**
+     * the house colour (Blue, Green, Red, White, or Yellow)
+     */
+    private String house;
+    /**
+     * true if the student requires AARA adjustments, false otherwise
+     */
+    private Boolean aara;
+    /**
+     * list of the students subjects
+     */
+    private SubjectList subjects;
+    /**
+     * list of the students exams
+     */
+    private ExamList exams;
 
     /**
      * Constructs a new Student object with no AARA requirements by default.
      *
-     * @param lui         the student's 10-digit Learner Unique Identifier (LUI)
-     * @param givenNames  the given names for the student
-     * @param familyName  the family name for the student
-     * @param day         the day of birth (1-31)
-     * @param month       the month of birth (1-12)
-     * @param year        the year of birth (1965-2015)
-     * @param house       the house colour (Blue, Green, Red, White, or Yellow)
+     * @param lui        the student's 10-digit Learner Unique Identifier (LUI)
+     * @param givenNames the given names for the student
+     * @param familyName the family name for the student
+     * @param day        the day of birth (1-31)
+     * @param month      the month of birth (1-12)
+     * @param year       the year of birth (1965-2015)
+     * @param house      the house colour (Blue, Green, Red, White, or Yellow)
      */
-    public Student(Long lui, String givenNames, String familyName, int day, int month, int year, String house) {
+    public Student(Long lui, String givenNames, String familyName, int day, int month, int year,
+                   String house) {
         this.lui = lui;
         this.givenNames = givenNames;
         this.familyName = familyName;
         this.dob = LocalDate.of(year, month, day);
         this.house = house;
         this.aara = false;
-        this.subjects = new ArrayList<>();
+        this.subjects = new SubjectList();
+
     }
 
     /**
      * Constructs a new Student object with AARA requirements.
      *
-     * @param lui         the student's 10-digit Learner Unique Identifier (LUI)
-     * @param givenNames  the given names for the student
-     * @param familyName  the family name for the student
-     * @param day         the day of birth (1-31)
-     * @param month       the month of birth (1-12)
-     * @param year        the year of birth (1965-2015)
-     * @param house       the house colour (Blue, Green, Red, White, or Yellow)
-     * @param aara        true if the student requires AARA adjustments, false otherwise
+     * @param lui        the student's 10-digit Learner Unique Identifier (LUI)
+     * @param givenNames the given names for the student
+     * @param familyName the family name for the student
+     * @param day        the day of birth (1-31)
+     * @param month      the month of birth (1-12)
+     * @param year       the year of birth (1965-2015)
+     * @param house      the house colour (Blue, Green, Red, White, or Yellow)
+     * @param aara       true if the student requires AARA adjustments, false otherwise
      */
-    public Student(Long lui, String givenNames, String familyName, int day, int month, int year, String house, Boolean aara) {
+    public Student(Long lui, String givenNames, String familyName, int day, int month, int year,
+                   String house, Boolean aara) {
         this.lui = lui;
         this.givenNames = givenNames;
         this.familyName = familyName;
         this.dob = LocalDate.of(year, month, day);
         this.house = house;
         this.aara = aara;
-        this.subjects = new ArrayList<>();
+        this.subjects = new SubjectList();
     }
 
     /**
@@ -119,7 +147,9 @@ public class Student {
      * @return the full name of the student
      */
     public String fullName() {
-        return givenNames + " " + familyName;
+        return givenNames
+                + " "
+                + familyName;
     }
 
     /**
@@ -138,7 +168,9 @@ public class Student {
      * @return the short name of the student
      */
     public String shortName() {
-        return firstName() + " " + familyName;
+        return firstName()
+                + " "
+                + familyName;
     }
 
     /**
@@ -160,7 +192,8 @@ public class Student {
     }
 
     /**
-     * Returns true if the student is an AARA student (requires access arrangements and reasonable adjustments).
+     * Returns true if the student is an AARA student (requires access arrangements and
+     * reasonable adjustments).
      *
      * @return true if the student requires AARA adjustments, false otherwise
      */
@@ -174,7 +207,7 @@ public class Student {
      * @param subject the subject to be added
      */
     public void addSubject(Subject subject) {
-        subjects.add(subject);
+        subjects.addSubject(subject);
     }
 
     /**
@@ -183,7 +216,7 @@ public class Student {
      * @param subject the subject to be removed
      */
     public void removeSubject(Subject subject) {
-        subjects.remove(subject);
+        subjects.removeSubject(subject);
     }
 
     /**
@@ -191,8 +224,19 @@ public class Student {
      *
      * @return the list of subjects for this student
      */
-    public List<Subject> getSubjects() {
+    public SubjectList getSubjects() {
         return subjects;
+    }
+
+    /**
+     * Gets the ExamList for this student
+     *
+     * @return the reference to this students ExamList
+     */
+    public ExamList getExams() {
+        //FIXME
+
+        return exams;
     }
 
     /**
@@ -201,12 +245,23 @@ public class Student {
      * @return a detailed string representation of the student
      */
     public String getFullDetail() {
-        return "Student LUI: " + lui + "\n" +
-                "Name: " + fullName() + "\n" +
-                "Date of Birth: " + dob + "\n" +
-                "House: " + house + "\n" +
-                "AARA: " + (aara ? "Yes" : "No") + "\n" +
-                "Subjects: " + subjects.size();
+        return "Student LUI: "
+                + lui
+                + "\n"
+                + "Name: "
+                + fullName()
+                + "\n"
+                + "Date of Birth: "
+                + dob
+                + "\n"
+                + "House: "
+                + house
+                + "\n"
+                + "AARA: "
+                + (aara ? "Yes" : "No")
+                + "\n"
+                + "Subjects: "
+                + subjects.toString();
     }
 
     /**
@@ -216,6 +271,10 @@ public class Student {
      */
     @Override
     public String toString() {
-        return "Student: " + fullName() + " (" + lui + ")";
+        return "Student: "
+                + fullName()
+                + " ("
+                + lui
+                + ")";
     }
 }

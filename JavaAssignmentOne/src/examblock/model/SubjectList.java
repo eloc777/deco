@@ -6,7 +6,10 @@ import java.util.List;
 /**
  * A collection object for holding and managing `Subject`s.
  */
-public class SubjectList{
+public class SubjectList {
+    /**
+     * list of subjects
+     */
     private List<Subject> subjects;
 
     /**
@@ -39,8 +42,11 @@ public class SubjectList{
      *
      * @param title the `title` of the `Subject` to be found.
      * @return The first `Subject` with a matching `title`, if it exists.
-     * @throws IllegalStateException throw an IllegalStateException if it can't find a matching subject
-     *         as that indicates there is a misalignment of the executing state and the complete list of possible subjects.
+     * @throws IllegalStateException throw an IllegalStateException if it can't find a matching
+     *                               subject
+     *                               as that indicates there is a misalignment of the executing
+     *                               state and the complete list of possible
+     *                               subjects.
      */
     public Subject byTitle(String title) throws IllegalStateException {
         for (Subject subject : subjects) {
@@ -48,13 +54,17 @@ public class SubjectList{
                 return subject;
             }
         }
-        throw new IllegalStateException("Subject with title '" + title + "' not found");
+        throw new IllegalStateException("Subject with title '"
+                + title
+                + "' not found");
     }
 
     /**
-     * Creates a new `List` holding `references` to all the `Subject`s managed by this `SubjectList` and returns it.
+     * Creates a new `List` holding `references` to all the `Subject`s managed by this
+     * `SubjectList` and returns it.
      *
-     * @return a new `List` holding `references` to all the `Subject`s managed by this `SubjectList`.
+     * @return a new `List` holding `references` to all the `Subject`s managed by this
+     * `SubjectList`.
      */
     public List<Subject> all() {
         return new ArrayList<>(subjects);
@@ -66,11 +76,17 @@ public class SubjectList{
      * @return detailed string representations of the contents of this subject list.
      */
     public String getFullDetail() {
-        StringBuilder result = new StringBuilder("Subject List - " + subjects.size() + " subject(s)\n");
+        StringBuilder result = new StringBuilder("Subject List - "
+                + subjects.size()
+                + " subject(s)"
+                + "\n");
 
-        for (int i = 0; i < subjects.size(); i++) {
+        for (int i = 0; i
+                < subjects.size(); i++) {
             result.append(subjects.get(i).getFullDetail());
-            if (i < subjects.size() - 1) {
+            if (i
+                    < subjects.size()
+                    - 1) {
                 result.append("\n");
             }
         }
@@ -85,11 +101,17 @@ public class SubjectList{
      */
     @Override
     public String toString() {
-        StringBuilder result = new StringBuilder("Subject List - " + subjects.size() + " subject(s)\n");
+        StringBuilder result = new StringBuilder("Subject List - "
+                + subjects.size()
+                + " subject(s)"
+                + "\n");
 
-        for (int i = 0; i < subjects.size(); i++) {
+        for (int i = 0; i
+                < subjects.size(); i++) {
             result.append(subjects.get(i).toString());
-            if (i < subjects.size() - 1) {
+            if (i
+                    < subjects.size()
+                    - 1) {
                 result.append("\n");
             }
         }

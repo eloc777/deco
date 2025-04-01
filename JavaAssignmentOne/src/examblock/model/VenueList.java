@@ -8,7 +8,9 @@ import java.util.List;
  * The VenueList class provides methods to add, remove, and manage venues.
  */
 public class VenueList {
-
+    /**
+     * list of venues
+     */
     private List<Venue> venues;
 
     /**
@@ -49,11 +51,14 @@ public class VenueList {
                 return venue;
             }
         }
-        throw new IllegalStateException("Venue with ID " + id + " not found.");
+        throw new IllegalStateException("Venue with ID "
+                + id
+                + " not found.");
     }
 
     /**
-     * Creates a new List holding references to all the Venues managed by this VenueList and returns it.
+     * Creates a new List holding references to all the Venues managed by this VenueList and
+     * returns it.
      *
      * @return a new List holding references to all the Venues managed by this VenueList.
      */
@@ -63,17 +68,21 @@ public class VenueList {
 
     /**
      * Allocates Students to Desks for every Session in every Venue.
-     * This method will allocate students based on sessions and exams for the given cohort of students.
+     * This method will allocate students based on sessions and exams for the given cohort of
+     * students.
      *
      * @param sessions the current set of exam sessions allocated to venues.
      * @param exams    the current set of Year 12 exams.
      * @param cohort   all the Year 12 students.
      */
     public void allocateStudents(SessionList sessions, ExamList exams, StudentList cohort) {
-        // Example: The actual logic for student allocation will depend on how sessions, exams, and students are represented.
+        // Example: The actual logic for student allocation will depend on how sessions, exams,
+        // and students are
+        // represented.
         // This is a placeholder to give you an idea of what it might involve.
 
-        // This method could allocate students to desks by finding the available desks in the venues and sessions
+        // This method could allocate students to desks by finding the available desks in the
+        // venues and sessions
         // and then assigning students to each desk in a round-robin or other suitable manner.
     }
 
@@ -110,6 +119,8 @@ public class VenueList {
      */
     @Override
     public String toString() {
-        return "Venue List with " + venues.size() + " venues.";
+        return "Venue List with "
+                + venues.size()
+                + " venues.";
     }
 }
