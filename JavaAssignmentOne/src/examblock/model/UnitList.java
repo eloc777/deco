@@ -102,12 +102,12 @@ public class UnitList {
      */
     @Override
     public String toString() {
-        StringBuilder result = new StringBuilder("Unit List - "
-                + units.size()
-                + " unit(s)\n");
+        StringBuilder result = new StringBuilder();
 
         for (int i = 0; i
                 < units.size(); i++) {
+            result.append(units.get(i).getSubject());
+            result.append(": ");
             result.append(units.get(i).toString());
             if (i
                     < units.size()

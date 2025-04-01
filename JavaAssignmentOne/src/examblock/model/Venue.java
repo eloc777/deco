@@ -29,6 +29,10 @@ public class Venue extends Room {
      * whether the venue is used for AARA exam sessions.
      */
     private boolean aara;
+    /**
+     * Venue identifier
+     */
+    private String venueId;
 
 
     /**
@@ -45,6 +49,7 @@ public class Venue extends Room {
     public Venue(String id, int roomCount, RoomList rooms, int rows, int columns, int totalDesks,
                  boolean aara) {
         super(id);
+        this.venueId = id;
         this.roomCount = roomCount;
         this.rooms = rooms;
         this.rows = rows;
@@ -59,9 +64,7 @@ public class Venue extends Room {
      * @return the identifier of the venue.
      */
     public String venueId() {
-        //FIXME loop through rooms
-        String id = new String();
-        return id;
+        return venueId;
     }
 
     /**
@@ -116,14 +119,7 @@ public class Venue extends Room {
      * @return true if this venue is the same AARA type as the parameter.
      */
     public boolean checkVenueType(boolean aara) {
-        if (this.aara
-                == aara) {
-            System.out.println(this.aara ? "This is an AARA venue." : "This is NOT an AARA venue.");
-            return true;
-        } else {
-            System.out.println(this.aara ? "This is an AARA venue." : "This is NOT an AARA venue.");
-            return false;
-        }
+        return this.aara == aara;
     }
 
     /**
@@ -153,8 +149,7 @@ public class Venue extends Room {
      */
     @Override
     public String toString() {
-        return "Venue ID: "
-                + venueId();
+        return venueId;
     }
 }
 

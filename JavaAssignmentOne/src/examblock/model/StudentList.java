@@ -94,10 +94,13 @@ public class StudentList {
      */
     @Override
     public String toString() {
-        StringBuilder minimalDetails = new StringBuilder("Student List: ");
+        StringBuilder SB = new StringBuilder("Here is the current list of students: \n");
         for (Student student : students) {
-            minimalDetails.append(student.shortName()).append(", ");
+            SB.append(student.getLui() + " ");
+            SB.append(student.shortName() + "\n");
+            SB.append(student.getSubjects().toString() + "\n");
+            SB.append("============================================================\n");
         }
-        return minimalDetails.toString().replaceAll(", $", ""); // Remove trailing comma
+        return SB.toString();
     }
 }

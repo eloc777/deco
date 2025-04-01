@@ -96,8 +96,11 @@ public class ExamList {
     @Override
     public String toString() {
         StringBuilder summary = new StringBuilder("Exams:\n");
-        for (Exam exam : exams) {
-            summary.append(exam.toString()).append("\n");
+        for (int i = 0; i
+                < exams.size(); i++) {
+            summary.append(i + 1 + ". ");
+            summary.append(exams.get(i).toString());
+            summary.append("\n");
         }
         return summary.toString();
     }

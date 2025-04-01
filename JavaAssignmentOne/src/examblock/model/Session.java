@@ -147,7 +147,7 @@ public class Session {
                 == null) {
             throw new IllegalArgumentException("Exams and cohort cannot be null.");
         }
-        // Implementation depends on ExamList and StudentList classes
+        //FIXME
         System.out.println("Allocating students to desks...");
     }
 

@@ -129,9 +129,6 @@ public class Exam {
     public Subject getSubject() {
         return subject;
     }
-
-    // Methods
-
     /**
      * Gets the full title of this exam including type and optional details like paper and subtitle.
      *
@@ -158,14 +155,15 @@ public class Exam {
      * @return A string representing a short title for this exam.
      */
     public String getShortTitle() {
-        StringBuilder shortTitle = new StringBuilder(examType.toString()
-                + ", "
-                + subject.toString());
-        if (paper
-                != null) {
-            shortTitle.append(", Paper ").append(paper);
+        String returnable = "Year 12 "
+                + examType.toString()
+                + " "
+                + subject;
+        if (paper != null) {
+            returnable += " Paper "
+                    + paper;
         }
-        return shortTitle.toString();
+        return returnable;
     }
 
     /**

@@ -69,7 +69,6 @@ public class Subject {
      */
     @Override
     public String toString() {
-        return title.toUpperCase()
-                + "\n";
+        return title;
     }
 }

@@ -101,14 +101,13 @@ public class SubjectList {
      */
     @Override
     public String toString() {
-        StringBuilder result = new StringBuilder("Subject List - "
-                + subjects.size()
-                + " subject(s)"
-                + "\n");
-
+        StringBuilder result = new StringBuilder();
         for (int i = 0; i
                 < subjects.size(); i++) {
-            result.append(subjects.get(i).toString());
+            result.append(i
+                    + 1
+                    + ". "
+                    + subjects.get(i).toString().toUpperCase());
             if (i
                     < subjects.size()
                     - 1) {

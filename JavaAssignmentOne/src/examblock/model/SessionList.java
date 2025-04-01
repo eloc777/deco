@@ -57,11 +57,7 @@ public class SessionList {
      * @return A new list holding references to all the Sessions in this SessionList.
      */
     public List<Session> all() {
-        List<Session> returnable = new ArrayList<>();
-        for (Session session : sessions) {
-            returnable.add(session);
-        }
-        return returnable;
+        return new ArrayList<>(sessions);
     }
 
     /**
@@ -99,7 +95,7 @@ public class SessionList {
                 return session.getSessionNumber();
             }
         }
-        return 0; // No matching session found
+        return 0;
     }
 
     /**
@@ -133,12 +129,10 @@ public class SessionList {
         for (Session session : sessions) {
             if (session.getVenue().equals(venue)) {
                 for (Exam e : session.getExams()) {
-                    //FIXME check this later, not sure if will work
                     if (exam.equals(e)) {
                         return session;
                     }
                 }
-                return session;
             }
         }
         throw new IllegalStateException();
@@ -161,7 +155,6 @@ public class SessionList {
         for (Session session : sessions) {
             if (session.getVenue().equals(venue)) {
                 targetSession = session;
-                break;
             }
         }
 
@@ -196,6 +189,7 @@ public class SessionList {
         System.out.println("That's a total of "
                 + totalStudents
                 + " students.");
+        targetSession.scheduleExam(exam, numberStudents);
 
         return totalStudents;
     }
@@ -209,7 +203,25 @@ public class SessionList {
      * @param numberStudents The number of students being added with this allocation.
      */
     public void scheduleExam(Venue venue, Exam exam, int numberStudents) {
-        int totalStudents = getSessionNewTotal(venue, exam, numberStudents);
+        Session targetSession = null;
+        for (Session session : sessions) {
+            if (session.getVenue().equals(venue)) {
+                targetSession = session;
+                break;
+            }
+        }
+
+        // If no existing session is found, create one
+        if (targetSession
+                == null) {
+            System.out.println("There is currently no exam session in that venue at that time.");
+            System.out.println("Creating a new session...");
+            int nextUniqueSessionNumber = getNextUniqueSessionNumber(venue);
+            targetSession = new Session(venue, nextUniqueSessionNumber, LocalDate.now(),
+                    LocalTime.now());
+            add(targetSession);
+        }
+
         System.out.println(exam.getSubject()
                 + " exam added to "
                 + venue.venueId()

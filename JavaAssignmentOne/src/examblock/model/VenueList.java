@@ -119,8 +119,14 @@ public class VenueList {
      */
     @Override
     public String toString() {
-        return "Venue List with "
-                + venues.size()
-                + " venues.";
+        StringBuilder summary = new StringBuilder();
+        for (int i = 0; i
+                < venues.size(); i++) {
+            summary.append(i + 1 + ".");
+            summary.append(venues.get(i).toString());
+            summary.append("\n");
+        }
+        return summary.toString();
+        }
     }
-}
+
