@@ -96,9 +96,12 @@ public class StudentList {
     public String toString() {
         StringBuilder SB = new StringBuilder("Here is the current list of students: \n");
         for (Student student : students) {
-            SB.append(student.getLui() + " ");
-            SB.append(student.shortName() + "\n");
-            SB.append(student.getSubjects().toString() + "\n");
+            SB.append(student.getLui()
+                    + " ");
+            SB.append(student.shortName()
+                    + "\n");
+            SB.append(student.getSubjects().toString()
+                    + "\n");
             SB.append("============================================================\n");
         }
         return SB.toString();

@@ -1,7 +1,7 @@
 package examblock.model;
 
 /**
- *An object describing a single Year 12 Subject.
+ * An object describing a single Year 12 Subject.
  */
 public class Subject {
     /**

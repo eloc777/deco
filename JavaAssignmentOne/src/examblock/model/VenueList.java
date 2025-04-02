@@ -76,14 +76,11 @@ public class VenueList {
      * @param cohort   all the Year 12 students.
      */
     public void allocateStudents(SessionList sessions, ExamList exams, StudentList cohort) {
-        // Example: The actual logic for student allocation will depend on how sessions, exams,
-        // and students are
-        // represented.
-        // This is a placeholder to give you an idea of what it might involve.
+        for (int i = 0; i
+                < sessions.all().size(); i++) {
+            sessions.all().get(i).allocateStudents(exams, cohort);
+        }
 
-        // This method could allocate students to desks by finding the available desks in the
-        // venues and sessions
-        // and then assigning students to each desk in a round-robin or other suitable manner.
     }
 
     /**
@@ -92,10 +89,9 @@ public class VenueList {
      * @param sessions the current set of exam sessions allocated to venues.
      */
     public void printAllocations(SessionList sessions) {
-//        for (Session session : sessions) {
-//            System.out.println("Session ID: " + session.getSessionNumber());
-//            //FIXME
-//        }
+        for (Session session : sessions.all()) {
+            session.printDesks();
+        }
     }
 
     /**
@@ -122,11 +118,13 @@ public class VenueList {
         StringBuilder summary = new StringBuilder();
         for (int i = 0; i
                 < venues.size(); i++) {
-            summary.append(i + 1 + ".");
+            summary.append(i
+                    + 1
+                    + ".");
             summary.append(venues.get(i).toString());
             summary.append("\n");
         }
         return summary.toString();
-        }
     }
+}
 

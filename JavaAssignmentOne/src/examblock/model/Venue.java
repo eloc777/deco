@@ -119,7 +119,8 @@ public class Venue extends Room {
      * @return true if this venue is the same AARA type as the parameter.
      */
     public boolean checkVenueType(boolean aara) {
-        return this.aara == aara;
+        return this.aara
+                == aara;
     }
 
     /**

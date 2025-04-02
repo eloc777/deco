@@ -98,7 +98,9 @@ public class ExamList {
         StringBuilder summary = new StringBuilder("Exams:\n");
         for (int i = 0; i
                 < exams.size(); i++) {
-            summary.append(i + 1 + ". ");
+            summary.append(i
+                    + 1
+                    + ". ");
             summary.append(exams.get(i).toString());
             summary.append("\n");
         }

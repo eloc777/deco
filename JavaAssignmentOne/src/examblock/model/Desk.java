@@ -82,15 +82,16 @@ public class Desk {
 
     @Override
     public String toString() {
-        return "Desk{"
-                + "deskNumber="
+        if (givenAndInit
+                == null) {
+            return "Desk "
+                    + deskNumber
+                    + "\n";
+        }
+        return "Desk "
                 + deskNumber
-                + ", familyName='"
-                + familyName
-                + '\''
-                + ", givenAndInit='"
+                + "\n"
                 + givenAndInit
-                + '\''
-                + '}';
+                + "\n";
     }
 }

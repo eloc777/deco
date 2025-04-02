@@ -129,6 +129,7 @@ public class Exam {
     public Subject getSubject() {
         return subject;
     }
+
     /**
      * Gets the full title of this exam including type and optional details like paper and subtitle.
      *
@@ -159,7 +160,8 @@ public class Exam {
                 + examType.toString()
                 + " "
                 + subject;
-        if (paper != null) {
+        if (paper
+                != null) {
             returnable += " Paper "
                     + paper;
         }
