@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: 'Nunito', sans-serif;
+    font-family: "Nunito", sans-serif;
     color: var(--text-color); /* color applies to text */
     background-color: var(--background-color);
 }
@@ -14,18 +14,51 @@ h1 {
     font-size: 4.2rem; /* 2.6 x 1.618 rounded */
     color: var(--primary-color);
 }
-                                    
+
 /* Typography (Using Golden Ratio) */
 h2 {
     font-size: 2.6rem;
     color: var(--text-color);
     font-weight: 700;
 }
-                                    
+
 /* Typography (Using Golden Ratio) */
 h3 {
-    font-size: 1.6rem; 
+    font-size: 1.6rem;
     color: var(--text-color);
     font-weight: 700;
 }
-                                  
+
+/* Simple value box styling */
+.value-box {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Card styling */
+.card {
+    border: 1px solid lightblue;
+    border-radius: 5px;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    margin-bottom: 1rem;
+}
+
+/* Simple layout for card content */
+.card-content {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Feature section */
+.feature {
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #eee;
+    margin-left: 2rem;
+}
