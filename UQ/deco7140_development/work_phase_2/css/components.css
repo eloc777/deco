@@ -25,13 +25,14 @@
     font-size: 0.8rem;
     font-weight: bold;
     width: 120px; /* Sets a fixed width for the tooltip */
-    height: 30px; /* Sets a fixed height, making the tooltip a perfect circle */
+    height: auto; /* Sets a fixed height, making the tooltip a perfect circle */
     display: flex; /* Uses Flexbox to center the text inside the circle */
     align-items: center; /* Vertically centers the text inside the tooltip */
     justify-content: center; /* Horizontally centers the text inside the tooltip */
     border-radius: 10%; /* Creates rounded corners */
     opacity: 0; /* Initially hides the tooltip */
     transition: opacity 0.3s ease; /* Smoothly fades in the tooltip by changing the opacity */
+    padding: 3px;
 }
 
 /* Show Number on Hover (Desktop) */
