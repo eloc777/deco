@@ -14,26 +14,228 @@
     </head>
     <body>
         <nav class="navbar">
-            <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                ☰
+            </button>
             <ul class="menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="client_needs_analysis.html">Client Needs</a></li>
-                <li><a href="accessibility_assessment.html" aria-current="accesibility">Accesibility</a></li>
-                <li><a href="genai_mt_acknowledgement.html">AI Acknowledgemnt</a></li>
+                <li>
+                    <a
+                        href="accessibility_assessment.html"
+                        aria-current="accesibility"
+                        >Accesibility</a
+                    >
+                </li>
+                <li>
+                    <a href="genai_mt_acknowledgement.html"
+                        >AI Acknowledgemnt</a
+                    >
+                </li>
                 <li><a href="user_stories.html">User Stories</a></li>
                 <li><a href="ethics_analysis.html">Ethics</a></li>
             </ul>
         </nav>
         <div class="container">
             <header>
-                <h1>Hunter's Work Phase 2</h1>
+                <h1>Accessibility assessment</h1>
             </header>
             <section>
-                <h2>accessibility assessment</h2>
                 <p>
-                    This is the second phase of my work. This page demonstate
-                    accessibility aspects of the assessment.
+                    This page lists the relevant accesibility success criteria.
+                    For each criteria, there is an explanation for why it is
+                    relevant, as well as listed features which help the website
+                    achieve this success criteria
                 </p>
+                <h2>Relevant Success criteria</h2>
+
+                <h3>1.1.1 Non-text content</h3>
+                <div class="flip-card-container">
+                    <div class="flip-card" tabindex="0">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <p><strong>Relevance</strong></p>
+                                <p>
+                                    For cultural and heritage communities, where
+                                    cultural imagery may play a significant
+                                    role, providing meaningful alt text ensures
+                                    that everyone can access and understand the
+                                    significance of visuals
+                                </p>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><strong>Feature</strong></p>
+                                <p>
+                                    The website uses aria methods which allow
+                                    screen readers to understand where they are
+                                    on the website. Moving forward it will be
+                                    important to provide text descriptions of
+                                    any images or non textual content.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>1.4.1 Avoid Color-only Cues</h3>
+                <div class="flip-card-container">
+                    <div class="flip-card" tabindex="0">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <p><strong>Relevance</strong></p>
+                                <p>
+                                    Relying solely on color to convey
+                                    information can exclude users with color
+                                    blindness or other visual impairments. This
+                                    is important to address to maintain the
+                                    inclusivity value.
+                                </p>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><strong>Feature</strong></p>
+                                <p>The website avoids any Color-only Cues</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h3>1.4.3 Perceivable Text Contrast</h3>
+                <div class="flip-card-container">
+                    <div class="flip-card" tabindex="0">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <p><strong>Relevance</strong></p>
+                                <p>
+                                    Keeping with the theme of inclusivity,
+                                    percievable text contrast makes it easier
+                                    for all too read.
+                                </p>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><strong>Feature</strong></p>
+                                <p>
+                                    The set of use of base colours ensures all
+                                    contrasts achieve an acceptable ratio.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h3>1.4.4 Resize Text without Loss</h3>
+                <div class="flip-card-container">
+                    <div class="flip-card" tabindex="0">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <p><strong>Relevance</strong></p>
+                                <p>
+                                    Given the strong feedback regarding Elder
+                                    usability, it is especially important that
+                                    text can be resized without punishing user
+                                    experience.
+                                </p>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><strong>Feature</strong></p>
+                                <p>
+                                    We use css such as flexbox to ensure all
+                                    textual aspects of the page are dyanimcally
+                                    resizable.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h3>2.1.1 Keyboard Navigability</h3>
+                <div class="flip-card-container">
+                    <div class="flip-card" tabindex="0">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <p><strong>Relevance</strong></p>
+                                <p>
+                                    Again relating to inclusivity, we want all
+                                    members of the community to be able to
+                                    navigate the website.
+                                </p>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><strong>Feature</strong></p>
+                                <p>
+                                    Featurs such as these flip cards are all
+                                    accesible through use of the tabindex.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h3>3.1.5 Reading Level</h3>
+                <div class="flip-card-container">
+                    <div class="flip-card" tabindex="0">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <p><strong>Relevance</strong></p>
+                                <p>
+                                    With the website's target audience varying
+                                    greatly in range and education level, a
+                                    simple reading level is vital.
+                                </p>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><strong>Feature</strong></p>
+                                <p>
+                                    The website avoids the use of complicated
+                                    words. Moving forward, sentence and
+                                    paragraph structure for crucial pages will
+                                    be simplified even further.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h3>3.2.3 Consistent Navigation</h3>
+                <div class="flip-card-container">
+                    <div class="flip-card" tabindex="0">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <p><strong>Relevance</strong></p>
+                                <p>
+                                    Consistent navigation will make it easier
+                                    for elders and children alike to not feel so
+                                    overwhelmed with the website.
+                                </p>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><strong>Feature</strong></p>
+                                <p>
+                                    The website includes a consistent menu
+                                    layout across every page.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h3>3.3.2 Labels (& Instructions)</h3>
+                <div class="flip-card-container">
+                    <div class="flip-card" tabindex="0">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <p><strong>Relevance</strong></p>
+                                <p>
+                                    In keeping with the theme of ease of use,
+                                    labels and instructions will provide a more
+                                    friendly user experience. This makes it more
+                                    likely for members to continue using the
+                                    website.
+                                </p>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><strong>Feature</strong></p>
+                                <p>
+                                    All pages of the website contain clear
+                                    definitions of what is found on that page.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
         </div>
         <script type="module" src="js/accessibility_assessment.js"></script>
