@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=National+Park:wght@200..800&display=swap");
+
+:root {
+    /* Core colors */
+    --primary: #466a2a; /* Deep moss green (accent) */
+    --primary-bg: #f0d2a7; /* Warm parchment (primary background) */
+    --secondary: #7e9254; /* Muted olive (buttons/icons) */
+    --secondary-bg: #e3e8d3; /* Lichen mist (secondary background) */
+    --dark: #2d3b2d; /* Forest floor base (headers) */
+    --background: var(--primary-bg); /* Default background */
+    --text: #44402a; /* Dark bark (body text) */
+    --text-light: #a5b681; /* Lichen green (secondary text) */
+}
+
+body {
+    font-family: "National Park", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--text);
+    background-color: var(--secondary-bg);
+}
+
+/* Typography (Using Golden Ratio) */
+h1 {
+    font-size: 4.2rem; /* 2.6 x 1.618 rounded */
+    color: var(--primary);
+}
+
+/* Typography (Using Golden Ratio) */
+h2 {
+    font-size: 2.6rem;
+    color: var(--text);
+    font-weight: 700;
+}
+
+/* Typography (Using Golden Ratio) */
+h3 {
+    font-size: 1.6rem;
+    color: var(--text);
+    font-weight: 700;
+}
+
+.page-title {
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .page-title {
+        text-align: left;
+        font-size: 3.6;
+    }
+}
