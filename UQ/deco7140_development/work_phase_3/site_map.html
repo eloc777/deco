@@ -9,21 +9,260 @@
         <link rel="stylesheet" href="css/base.css" />
         <link rel="stylesheet" href="css/layout.css" />
         <link rel="stylesheet" href="css/components.css" />
+        <link rel="stylesheet" href="./css/component_skeletons/accordion.css" />
 
         <title>Work Phase 3</title>
     </head>
     <body>
         <nav id="nav-mobile" aria-label="Main Navigation">
-
+            <ul>
+                <li>
+                    <a href="index.html"><span class="icon">🏠</span></a>
+                </li>
+                <li>
+                    <a href="site_map.html" aria-current="page"
+                        ><span class="icon">🧭</span></a
+                    >
+                </li>
+                <li>
+                    <a href="style_guide.html"><span class="icon">🎨</span></a>
+                </li>
+                <li>
+                    <a href="ethical_response.html"
+                        ><span class="icon">⚖️</span></a
+                    >
+                </li>
+                <li>
+                    <a href="genai_mt_acknowledgement.html"
+                        ><span class="icon">🤖</span></a
+                    >
+                </li>
+            </ul>
         </nav>
         <nav id="nav-desktop" aria-label="Main Navigation">
-
-        </nav>  
+            <ul>
+                <li>
+                    <a href="index.html">WP# Home</a>
+                </li>
+                <li>
+                    <a href="site_map.html" aria-current="page">Site Map</a>
+                </li>
+                <li>
+                    <a href="style_guide.html">Style Guide</a>
+                </li>
+                <li>
+                    <a href="ethical_response.html">Ethics Response</a>
+                </li>
+                <li>
+                    <a href="genai_mt_acknowledgement.html">GenAI</a>
+                </li>
+            </ul>
+        </nav>
         <main>
             <div class="container">
-            <h1>WP3 Home Page</h1>
+                <h1>Site Map</h1>
+                <p>
+                    This page shows the site map design for my communities
+                    webpage.
+                </p>
+                <img
+                    src="assets/sitemap-small.jpg"
+                    class="responsive-img"
+                    alt="site map"
+                />
+
+                <section class="accordion m-y-5">
+                    <div class="accordion-item">
+                        <button class="accordion-header">Learn</button>
+                        <div class="accordion-content">
+                            <p>
+                                In this section of the webpage, users will be
+                                able to learn about parenting, culture and
+                                language
+                            </p>
+                            <div class="accordion nested">
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        ▹▷ Parenting Resources
+                                    </button>
+                                    <div class="accordion-content">
+                                        <p class="m-y-3">
+                                            A rich supply of parenting
+                                            resources. This section of the
+                                            websites supports social cohesion
+                                            and maintainence of Cultural
+                                            Heritage through providing support
+                                            to parents of the community.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion nested">
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        ▹▷ Cultural Resources
+                                    </button>
+                                    <div class="accordion-content">
+                                        <p class="m-y-3">
+                                            Uniquely relevant cultural resources
+                                            providing information on both
+                                            Culture and History. This section
+                                            directly supports the maintainence
+                                            of the communities' cultural and
+                                            Heritage values.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion nested">
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        ▹▷ Language Resources
+                                    </button>
+                                    <div class="accordion-content">
+                                        <p class="m-y-3">
+                                            An array of resources for learning
+                                            the Turrbal language. This secton of
+                                            the website also assists in
+                                            maintaining and expressing the value
+                                            of culture.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="accordion m-y-5">
+                    <div class="accordion-item">
+                        <button class="accordion-header">Connect</button>
+                        <div class="accordion-content">
+                            <p>
+                                In this section of the webpage, users will be
+                                able to connect with other users through
+                                physical events and online interactions.
+                            </p>
+                            <div class="accordion nested">
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        ▹▷ Community Events
+                                    </button>
+                                    <div class="accordion-content">
+                                        <p class="m-y-3">
+                                            This section of the website will
+                                            showcase upcoming community events
+                                            with all the relevant information.
+                                            The open sharing of events
+                                            strengthens social cohesion and
+                                            promotes inclusivity.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion nested">
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        ▹▷ Mentor Finder
+                                    </button>
+                                    <div class="accordion-content">
+                                        <p class="m-y-3">
+                                            A place for mentors and mentees to
+                                            find each other. Further supports
+                                            social cohesion and inclusivity by
+                                            creating opportunity to form genuine
+                                            relationships. The mentor program
+                                            also helps to encourage the learning
+                                            of culture and heritage.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion nested">
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        ▹▷ Personal Profile
+                                    </button>
+                                    <div class="accordion-content">
+                                        <p class="m-y-3">
+                                            Here user's will be able to create
+                                            their individual user profiles. By
+                                            being able to create a customisable
+                                            profile, users will be able to
+                                            demonstrate their unique
+                                            characterisics.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="accordion m-y-5">
+                    <div class="accordion-item">
+                        <button class="accordion-header">Share</button>
+                        <div class="accordion-content">
+                            <p>
+                                In this section of the webpage, users will be
+                                able to share community relevant information
+                                such as experiences, art and traditonal recipes.
+                            </p>
+                            
+                            <div class="accordion nested">
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        ▹▷ Art Showcase
+                                    </button>
+                                    <div class="accordion-content">
+                                        <p class="m-y-3">
+                                            A showcase of traditonal and
+                                            contemporary art by community
+                                            members. Encourages uniqueness and
+                                            supports an empowering culture.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion nested">
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        ▹▷ Experience Sharing
+                                    </button>
+                                    <div class="accordion-content">
+                                        <p class="m-y-3">
+                                            Individuals will be able to share
+                                            community relevant stories and
+                                            experiences. This section will
+                                            further support social cohesin by
+                                            providing another way to connect.
+                                            Also emphasises history and
+                                            tradition.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion nested">
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        ▹▷ Community Recipe Book
+                                    </button>
+                                    <div class="accordion-content">
+                                        <p class="m-y-3">
+                                            A showcase of traditonal and
+                                            contemporary recipes. The community
+                                            recipe book supports social cohesion
+                                            and uniqueness by sharing community
+                                            recipes. The sharing of traditonal
+                                            recipes strengthens connection to
+                                            history and culture.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </main>
-
+        <script type="module" src="./js/site_map.js"></script>
     </body>
 </html>
