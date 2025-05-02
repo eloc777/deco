@@ -9,21 +9,210 @@
         <link rel="stylesheet" href="css/base.css" />
         <link rel="stylesheet" href="css/layout.css" />
         <link rel="stylesheet" href="css/components.css" />
+        <link rel="stylesheet" href="css/page_css/visceral_design.css" />
 
         <title>Work Phase 3</title>
     </head>
     <body>
         <nav id="nav-mobile" aria-label="Main Navigation">
-
+            <ul>
+                <li>
+                    <a href="index.html"><span class="icon">🏠</span></a>
+                </li>
+                <li>
+                    <a href="site_map.html" aria-current="page"
+                        ><span class="icon">🧭</span></a
+                    >
+                </li>
+                <li>
+                    <a href="style_guide.html"><span class="icon">🎨</span></a>
+                </li>
+                <li>
+                    <a href="ethical_response.html"
+                        ><span class="icon">⚖️</span></a
+                    >
+                </li>
+                <li>
+                    <a href="genai_mt_acknowledgement.html"
+                        ><span class="icon">🤖</span></a
+                    >
+                </li>
+            </ul>
         </nav>
         <nav id="nav-desktop" aria-label="Main Navigation">
-
-        </nav>  
+            <ul>
+                <li>
+                    <a href="index.html">WP# Home</a>
+                </li>
+                <li>
+                    <a href="site_map.html" aria-current="page">Site Map</a>
+                </li>
+                <li>
+                    <a href="style_guide.html">Style Guide</a>
+                </li>
+                <li>
+                    <a href="ethical_response.html">Ethics Response</a>
+                </li>
+                <li>
+                    <a href="genai_mt_acknowledgement.html">GenAI</a>
+                </li>
+            </ul>
+        </nav>
         <main>
             <div class="container">
-            <h1>WP3 Home Page</h1>
+                <h1 class="m-y-5">Visceral Design</h1>
+                <p class="hero-text">
+                    This page will demonstrate my visceral design through the
+                    use of wire sketches.
+                </p>
+
+                <!-- This is the code for your gallery -->
+                <article>
+                    <h2 class="m-t-3">Page Layouts</h2>
+                    <!-- gallery of small images -->
+                    <section class="gallery m-t-3">
+                        <img
+                            src="./assets/decohomepage.jpg"
+                            alt="This wireframe displays the mobile homepage. 
+                            each star will be replaced by Intuitive icons, 
+                            linking to 'Share', 'Connect', 'Learn', and 
+                            also back to the homepage.
+                            Simple layout and welcoming language initiate the 
+                            feelings of inclusivity. The simple design facilitaes
+                            the users need of easy access and inviting aesthetic."
+                        />
+                        <img
+                            src="./assets/Share page.jpg"
+                            alt="This wireframe displays the mobile 'share' page. 
+                            The simple design facilitaes the users need of easy 
+                            access and inviting aesthetic. Limited options and accessible
+                            language complexity also help to facilitate this."
+                        />
+                        <img
+                            src="./assets/Gallery page.jpg"
+                            alt="This wireframe demonstrates what the 'Gallery'
+                            page will look like. The showcasing of individual 
+                            artwork is the priority of this page, and this will 
+                            help to fulfill the user's need of being able to 
+                            display unique characteristics, contributing to the 
+                            value of uniqueness."
+                        />
+                        <img
+                            src="./assets/desktophome.jpg"
+                            alt="This wireframe gives and example on how the same concepts 
+                            that have been applied to the mobile layout which translate to 
+                            the desktop layout. The main differnce being the naviagtion menu's
+                            repositioning to the top of the page to allow for a more intuitive 
+                            desktop experience, keeping inline with best useability
+                            practices."
+                        />
+                    </section>
+                    <aside class="viewer" id="viewer" aria-hidden="true">
+                        <button
+                            id="close-viewer"
+                            aria-label="Close image viewer"
+                        >
+                            ✖
+                        </button>
+                        <img id="viewer-img" src="" alt="" />
+                        <p id="viewer-caption"></p>
+                    </aside>
+                </article>
+                <article>
+                    <h2 class="m-t-3">Colour Scheme</h2>
+                    <p>My chosen colour scheme is displayed below. 
+                        I focused on choosing warm colours that are 
+                        culturally relevant so as to keep in line 
+                        with the groups values of social cohesion 
+                        and heritage. I also ensured the colour scheme 
+                        provides sufficent contrast, keeping inline with 
+                        WAG and the groups value of inclusivity.</p>
+                    <section class="color-cards">
+                    <article class="color-card color-primary">
+                        <div class="color-swatch"></div>
+                        <div class="color-info">
+                            <span class="color-var">--primary</span>
+                            <span class="color-desc">Red ochre (accent)</span>
+                            <span class="color-hex">#B04A02</span>
+                        </div>
+                    </article>
+                    <article class="color-card color-primary-bg">
+                        <div class="color-swatch"></div>
+                        <div class="color-info">
+                            <span class="color-var">--primary-bg</span>
+                            <span class="color-desc"
+                                >Soft white (primary background)</span
+                            >
+                            <span class="color-hex">#F5F3ED</span>
+                        </div>
+                    </article>
+                    <article class="color-card color-secondary">
+                        <div class="color-swatch"></div>
+                        <div class="color-info">
+                            <span class="color-var">--secondary</span>
+                            <span class="color-desc"
+                                >Soft orange (buttons/icons)</span
+                            >
+                            <span class="color-hex">#E07B39</span>
+                        </div>
+                    </article>
+                    <article class="color-card color-secondary-bg">
+                        <div class="color-swatch"></div>
+                        <div class="color-info">
+                            <span class="color-var">--secondary-bg</span>
+                            <span class="color-desc"
+                                >Warm sand (secondary background)</span
+                            >
+                            <span class="color-hex">#E3CBA6</span>
+                        </div>
+                    </article>
+                    <article class="color-card color-dark">
+                        <div class="color-swatch"></div>
+                        <div class="color-info">
+                            <span class="color-var">--dark</span>
+                            <span class="color-desc"
+                                >Charcoal black (headers)</span
+                            >
+                            <span class="color-hex">#22211F</span>
+                        </div>
+                    </article>
+                    <article class="color-card color-text">
+                        <div class="color-swatch"></div>
+                        <div class="color-info">
+                            <span class="color-var">--text</span>
+                            <span class="color-desc"
+                                >Earth brown (body text)</span
+                            >
+                            <span class="color-hex">#7C4A02</span>
+                        </div>
+                    </article>
+                    <article class="color-card color-text-light">
+                        <div class="color-swatch"></div>
+                        <div class="color-info">
+                            <span class="color-var">--text-light</span>
+                            <span class="color-desc"
+                                >Eucalyptus green (secondary text)</span
+                            >
+                            <span class="color-hex">#4C6A47</span>
+                        </div>
+                    </article>
+                    <article class="color-card color-accent-blue">
+                        <div class="color-swatch"></div>
+                        <div class="color-info">
+                            <span class="color-var">--accent-blue</span>
+                            <span class="color-desc"
+                                >Deep blue (optional accent)</span
+                            >
+                            <span class="color-hex">#247BA0</span>
+                        </div>
+                    </article>
+                </article>
+            </section>
+                <article>
+                    <h2 class="m-t-3">Typography</h2>
+                </article>
             </div>
         </main>
-
+        <script type="module" src="./js/visceral_design.js"></script>
     </body>
 </html>

@@ -1,15 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=National+Park:wght@200..800&display=swap");
 
+
 :root {
     /* Core colors */
-    --primary: #466a2a; /* Deep moss green (accent) */
-    --primary-bg: #f0d2a7; /* Warm parchment (primary background) */
-    --secondary: #7e9254; /* Muted olive (buttons/icons) */
-    --secondary-bg: #e3e8d3; /* Lichen mist (secondary background) */
-    --dark: #2d3b2d; /* Forest floor base (headers) */
+    --primary: #B04A02;        /* Red ochre (accent) */
+    --primary-bg: #F5F3ED;     /* Soft white (primary background) */
+    --secondary: #E07B39;      /* Soft orange (buttons/icons) */
+    --secondary-bg: #E3CBA6;   /* Warm sand (secondary background) */
+    --dark: #22211F;           /* Charcoal black (headers) */
     --background: var(--primary-bg); /* Default background */
-    --text: #44402a; /* Dark bark (body text) */
-    --text-light: #a5b681; /* Lichen green (secondary text) */
+    --text: #7C4A02;           /* Earth brown (body text) */
+    --text-light: #4C6A47;     /* Eucalyptus green (secondary text) */
+    --accent-blue: #247BA0;    /* Deep blue (optional accent) */
 }
 
 body {

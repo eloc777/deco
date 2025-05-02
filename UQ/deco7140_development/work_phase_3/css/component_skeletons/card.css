@@ -1,0 +1,229 @@
+/* Card Components
+-------------------------------------------------- */
+
+/* Base Card Styles */
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Header */
+.card-header {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    background-color: #f8f8f8;
+}
+
+.card-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Card Body */
+.card-body {
+    padding: 15px;
+}
+
+.card-body p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* Card Footer */
+.card-footer {
+    padding: 15px;
+    border-top: 1px solid #eee;
+    background-color: #f8f8f8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Card Media */
+.card-media {
+    width: 100%;
+    max-height: 200px;
+    display: block;
+    object-fit: cover;
+}
+
+/* Card Media Container - for image size control */
+.card-media-container {
+    overflow: hidden;
+}
+
+/* Thumbnail variation for smaller images */
+.card-media-thumbnail {
+    max-height: 150px;
+    margin: 0 auto;
+    width: auto;
+    max-width: 100%;
+}
+
+/* Card with image on top */
+.card-image-top .card-media {
+    border-radius: 8px 8px 0 0;
+}
+
+/* Card with image on bottom */
+.card-image-bottom .card-media {
+    border-radius: 0 0 8px 8px;
+}
+
+/* Horizontal Card (for larger screens) */
+@media (min-width: 768px) {
+    .card-horizontal {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .card-horizontal .card-media-container {
+        flex: 0 0 40%;
+        max-width: 40%;
+    }
+
+    .card-horizontal .card-content {
+        flex: 1;
+    }
+
+    .card-horizontal .card-media {
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px 0 0 8px;
+    }
+}
+
+/* Card Grid Layout */
+.card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+@media (min-width: 576px) {
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .card-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Card Variants */
+.card-primary {
+    border-top: 4px solid #3498db;
+}
+
+.card-success {
+    border-top: 4px solid #2ecc71;
+}
+
+.card-warning {
+    border-top: 4px solid #f39c12;
+}
+
+.card-danger {
+    border-top: 4px solid #e74c3c;
+}
+
+/* Compact Card */
+.card-compact .card-header,
+.card-compact .card-body,
+.card-compact .card-footer {
+    padding: 10px;
+}
+
+/* Card with no border */
+.card-borderless {
+    border: none;
+}
+
+/* Card Button Styles */
+.card-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.card-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Button variants */
+.card-btn-primary {
+    background-color: #3498db;
+}
+
+.card-btn-primary:hover {
+    background-color: #2980b9;
+}
+
+.card-btn-success {
+    background-color: #2ecc71;
+}
+
+.card-btn-success:hover {
+    background-color: #27ae60;
+}
+
+.card-btn-warning {
+    background-color: #f39c12;
+}
+
+.card-btn-warning:hover {
+    background-color: #e67e22;
+}
+
+.card-btn-danger {
+    background-color: #e74c3c;
+}
+
+.card-btn-danger:hover {
+    background-color: #c0392b;
+}
+
+/* Outline button variation */
+.card-btn-outline {
+    background-color: transparent;
+    border: 2px solid #3498db;
+    color: #3498db;
+}
+
+.card-btn-outline:hover {
+    background-color: #3498db;
+    color: white;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
