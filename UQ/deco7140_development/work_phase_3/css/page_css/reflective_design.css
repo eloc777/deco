@@ -1,0 +1,16 @@
+@import url("../component_skeletons/accordion.css");
+ul.dotpoint_li li {
+    list-style: disc;
+    margin-left: 15px;
+}
+img {
+    width: 300px;
+}
+.sublist {
+    list-style-type: circle;
+    margin-top: 8px;
+}
+.emphasis {
+    font-weight: bold;
+    margin: 10px;
+}
