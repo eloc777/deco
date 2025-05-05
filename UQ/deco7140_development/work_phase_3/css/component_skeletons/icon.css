@@ -1,0 +1,250 @@
+/* icons.css - Accessible icon styles */
+
+/* Base icon class */
+.icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.125em;
+    color: currentColor;
+    fill: currentColor;
+}
+
+/* Sizing options */
+.icon-xs {
+    width: 0.75em;
+    height: 0.75em;
+}
+
+.icon-sm {
+    width: 0.875em;
+    height: 0.875em;
+}
+
+.icon-md {
+    width: 1em;
+    height: 1em;
+}
+
+.icon-lg {
+    width: 1.33em;
+    height: 1.33em;
+}
+
+.icon-xl {
+    width: 1.75em;
+    height: 1.75em;
+}
+
+.icon-2x {
+    width: 2em;
+    height: 2em;
+}
+
+.icon-3x {
+    width: 3em;
+    height: 3em;
+}
+
+/* Color variants */
+.icon-primary {
+    color: var(--primary);
+}
+
+.icon-secondary {
+    color: var(--secondary);
+}
+
+.icon-dark {
+    color: var(--dark);
+}
+
+.icon-text {
+    color: var(--text);
+}
+
+.icon-text-light {
+    color: var(--text-light);
+}
+
+.icon-accent {
+    color: var(--accent-blue);
+}
+
+/* Icon with background */
+.icon-bg {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5em;
+    border-radius: 50%;
+    background-color: var(--primary-bg);
+}
+
+.icon-bg-primary {
+    background-color: rgba(176, 74, 2, 0.1);
+    color: var(--primary);
+}
+
+.icon-bg-secondary {
+    background-color: rgba(224, 123, 57, 0.1);
+    color: var(--secondary);
+}
+
+.icon-bg-accent {
+    background-color: rgba(36, 123, 160, 0.1);
+    color: var(--accent-blue);
+}
+
+/* Positioning utilities */
+.icon-position-left {
+    margin-right: 0.5em;
+}
+
+.icon-position-right {
+    margin-left: 0.5em;
+}
+
+/* Fixed width for alignment in lists */
+.icon-fw {
+    width: 1.25em;
+    text-align: center;
+}
+
+/* Rotation */
+.icon-rotate-90 {
+    transform: rotate(90deg);
+}
+
+.icon-rotate-180 {
+    transform: rotate(180deg);
+}
+
+.icon-rotate-270 {
+    transform: rotate(270deg);
+}
+
+/* Flip */
+.icon-flip-horizontal {
+    transform: scaleX(-1);
+}
+
+.icon-flip-vertical {
+    transform: scaleY(-1);
+}
+
+.icon-flip-both {
+    transform: scale(-1);
+}
+
+/* Animation */
+.icon-spin {
+    animation: icon-spin 2s linear infinite;
+}
+
+@keyframes icon-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.icon-pulse {
+    animation: icon-pulse 1s ease-in-out infinite;
+}
+
+@keyframes icon-pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* For icon stack (layering icons) */
+.icon-stack {
+    display: inline-block;
+    height: 2em;
+    line-height: 2em;
+    position: relative;
+    vertical-align: middle;
+    width: 2em;
+}
+
+.icon-stack-1x,
+.icon-stack-2x {
+    left: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+.icon-stack-1x {
+    line-height: inherit;
+}
+
+.icon-stack-2x {
+    font-size: 2em;
+}
+
+/* Interactive icons */
+.icon-interactive {
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.icon-interactive:hover {
+    transform: scale(1.1);
+    color: var(--primary);
+}
+
+/* Accessibility: hide icon from screen readers when paired with text */
+
+/* For interactive icon buttons with improved accessibility */
+.icon-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5em;
+    border-radius: 50%;
+    color: var(--text);
+    transition: 
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.1s ease;
+}
+
+.icon-button:hover {
+    background-color: rgba(124, 74, 2, 0.1);
+    color: var(--primary);
+}
+
+.icon-button:focus {
+    outline: 2px solid var(--accent-blue);
+    outline-offset: 2px;
+}
+
+.icon-button:active {
+    transform: scale(0.97);
+}
+
+/* High contrast mode adjustments */
+@media (forced-colors: active) {
+    .icon {
+        forced-color-adjust: auto;
+    }
+    
+    .icon-button:focus {
+        outline: 2px solid Highlight;
+    }
+}

@@ -1,0 +1,6 @@
+@import url("../component_skeletons/button.css");
+@import url("../component_skeletons/accordion.css");
+@import url("../component_skeletons/form.css");
+img {
+    width: 300px;
+}
